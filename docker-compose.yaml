@@ -1,0 +1,18 @@
+version: "3"
+services:
+  monolith:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: hotel_app_monolith
+    container_name: "hotel_app_monolith"
+    ports:
+      - "8080:8080"
+    restart: always
+    networks:
+      - hotelapp_net
+
+networks:
+  hotelapp_net:
+    driver: bridge
+
